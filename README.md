@@ -1,11 +1,11 @@
 # WP Swift: ACF Starter Widget
 
- * Plugin Name:       WP Swift: ACF Starter Widget
- * Description:       A starter widget for creating widgets using Advanced Custom Fields
- * Version:           1.0.0
- * Author:            Gary Swift
- * License:           GPL-2.0+
- * Text Domain:       wp-swift-acf-starter-widget
+* Plugin Name:       WP Swift: Contact Widget
+* Description:       Placeholder widget for contact details
+* Version:           1.0.0
+* Author:            Gary Swift
+* License:           GPL-2.0+
+* Text Domain:       wp-swift-contact-widget
 
 ## Licence
 This project is licensed under the MIT license.

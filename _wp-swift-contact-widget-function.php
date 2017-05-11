@@ -1,28 +1,12 @@
 <?php
 /*
-  Plugin Name:       WP Swift: ACF Starter Widget
-  Description:       A starter widget for creating widgets using Advanced Custom Fields
+  Plugin Name:       WP Swift: Contact Widget
+  Description:       Placeholder widget for contact details
   Version:           1.0.0
   Author:            Gary Swift
   License:           GPL-2.0+
-  Text Domain:       wp-swift-acf-starter-widget
+  Text Domain:       wp-swift-contact-widget
 
-  //TODO
-
-  1) Find & Replace all of the following (case sensitive):
-  ACF Starter
-  _ACF_Starter_
-  _acf_starter_
-  -acf-starter-
-
-  2)
-  Change description in header and constructor
-
-  3)
-  Update README.md with new details
-
-  4) 
-  Rename both files
 
   5) 
   Replace the sample ACf field group included in _acf-field-group.php 
@@ -31,22 +15,22 @@
 */
 
 // Inclide the ACF group
-include "_acf-field-group.php";
+// include "_acf-field-group.php";
 
-class WP_Swift_ACF_Starter_Widget extends WP_Widget {
+class WP_Swift_Contact_Widget extends WP_Widget {
  
     public function __construct() {
      
         parent::__construct(
-            'wp_swift_acf_starter_widget',
-            __( 'WP Swift: ACF Starter Widget', 'wp-swift-acf-starter-widget' ),
+            'wp_swift_Contact_widget',
+            __( 'WP Swift: Contact Widget', 'wp-swift-contact-widget' ),
             array(
-                'classname'   => 'wp_swift_acf_starter_widget',
-                'description' => __( 'A starter widget for creating widgets using Advanced Custom Fields.', 'wp-swift-acf-starter-widget' )
+                'classname'   => 'wp_swift_Contact_widget',
+                'description' => __( 'Placeholder widget for contact details.', 'wp-swift-contact-widget' )
                 )
         );
        
-        load_plugin_textdomain( 'wp-swift-acf-starter-widget', false, basename( dirname( __FILE__ ) ) . '/languages' );
+        load_plugin_textdomain( 'wp-swift-contact-widget', false, basename( dirname( __FILE__ ) ) . '/languages' );
     }
  
     /**  
@@ -58,7 +42,7 @@ class WP_Swift_ACF_Starter_Widget extends WP_Widget {
      * @param array $instance Saved values from database.
      */
     public function widget( $args, $instance ) {    
-        include( plugin_dir_path( __FILE__ ) . '_wp-swift-acf-starter-widget.php');
+        include( plugin_dir_path( __FILE__ ) . '_wp-swift-contact-widget.php');
     }
  
   
@@ -85,10 +69,13 @@ class WP_Swift_ACF_Starter_Widget extends WP_Widget {
       */
     public function form( $instance ) { 
       //The ACF API will handle this
+      ?><p>
+        All settings for this are set in the <b>BrightLight</b> menu.
+      </p><?php
     }
 }
  
 /* Register the widget */
 add_action( 'widgets_init', function(){
-     register_widget( 'WP_Swift_ACF_Starter_Widget' );
+     register_widget( 'WP_Swift_Contact_Widget' );
 });
