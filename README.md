@@ -1,11 +1,11 @@
-# WP Swift: ACF Starter Widget
+# WP Swift: Easy Contact Widget
 
-* Plugin Name:       WP Swift: Contact Widget
-* Description:       Placeholder widget for contact details
-* Version:           1.0.0
-* Author:            Gary Swift
-* License:           GPL-2.0+
-* Text Domain:       wp-swift-contact-widget
+*  Plugin Name:       WP Swift: Easy Contact Widget
+*  Description:       Create a contact page widget
+*  Version:           1.0.0
+*  Author:            Gary Swift
+*  License:           GPL-2.0+
+*  Text Domain:       wp-swift-easy-contact-widget
 
 ## Licence
 This project is licensed under the MIT license.
