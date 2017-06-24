@@ -6,15 +6,9 @@
   Author:            Gary Swift
   License:           GPL-2.0+
   Text Domain:       wp-swift-easy-contact-widget
-
-
-  5) 
-  Replace the sample ACf field group included in _acf-field-group.php 
-  or remove the include and create a new field group using the ACF API.
-
 */
 
-// Inclide the ACF group
+// Include the ACF group
 include "_acf-field-group.php";
 
 class WP_Swift_Easy_Contact_Widget extends WP_Widget {
@@ -77,51 +71,3 @@ class WP_Swift_Easy_Contact_Widget extends WP_Widget {
 add_action( 'widgets_init', function(){
      register_widget( 'WP_Swift_Easy_Contact_Widget' );
 });
-
-function easy_contact_widget($widget_id='') {
-  if( get_field('widget_header', $widget_id) ) {
-      $widget_header =  get_field('widget_header', $widget_id);
-  }
-  else {
-    $widget_header = 'Header';
-  }
-  if( get_field('widget_link_text', $widget_id) ) {
-      $widget_link_text =  get_field('widget_link_text', $widget_id);
-  }
-  else {
-    $widget_link_text = 'widget_link_text';
-  }
-  if( get_field('widget_link', $widget_id) ) {
-      $widget_link_object =  get_field('widget_link', $widget_id);
-      $widget_link = $widget_link_object->guid;
-  }
-  else {
-    $widget_link = '#';
-  }
-  if( get_field('widget_text', $widget_id) ) {
-      $widget_text =  get_field('widget_text', $widget_id);
-  }
-  else {
-    $widget_text = 'widget_text';
-  }
-  ?>
-  <div class="overlay-box">
-    <a href="<?php echo $widget_link; ?>">
-      <h3 class="header"><?php echo $widget_header; ?></h3>
-      <h5 class="info-box"><?php echo $widget_link_text; ?> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></h5>
-      <p class="notes"><?php echo $widget_text; ?></p>
-    </a>
-  </div>
-  <?php
-}
-
-/**
- * Filter the except length to 20 words.
- *
- * @param int $length Excerpt length.
- * @return int (Maybe) modified excerpt length.
- */
-function wpdocs_custom_excerpt_length( $length ) {
-    return 15;
-}
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
